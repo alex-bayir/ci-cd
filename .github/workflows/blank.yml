@@ -38,3 +38,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      
+      - name: build container
+        run: docker build -r local < .devcontainer/dockerfile
+      
+      - name: build container
+        run: docker run -it -v $PWD:/srv -w/srv local lsb_release -a
