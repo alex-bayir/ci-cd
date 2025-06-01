@@ -19,10 +19,6 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    container: 
-      image: mcr.microsoft.com/devcontainers/base:debian
-    env:
-      TEST_VAR: "This is a test environment variable"
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -38,9 +34,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-
-      - name: build container
-        run: apt install docker -y
       
       - name: build container
         run: docker build -t local < .devcontainer/dockerfile
