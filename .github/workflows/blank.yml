@@ -38,6 +38,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: build container
+        run: apt install docker -y
       
       - name: build container
         run: docker build -t local < .devcontainer/dockerfile
